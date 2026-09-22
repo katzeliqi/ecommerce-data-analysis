@@ -1,2 +1,52 @@
-# ecommerce-data-analysis
-End-to-end data analysis project on UK ecommerce transactions, covering data cleaning, SQL analysis, RFM segmentation, cohort retention, Pareto analysis, and business insights.
+\# 英国电商用户行为与业务洞察分析
+
+> 基于Kaggle公开英国跨国零售数据集，\*\*Python3.11 + MySQL\*\* 完成一套完整的离线数据分析闭环，原始数据共54万条真实交易记录，覆盖2010‑12 \~ 2011‑12
+
+
+
+\##  项目简介
+
+原始数据集存在大量缺失值、退货取消订单、无效脏数据，如果直接统计会造成销售额、退货率、用户留存指标失真。
+
+
+
+本项目完成从\*\*原始CSV数据清洗、MySQL入库、SQL聚合取数、Python深度分析、业务建模、可视化输出业务建议\*\*全流程：
+
+1\. 使用Pandas链式写法处理脏数据，对退货订单打标、过滤无效记录，统一业务统计口径；清洗后数据导入MySQL数据库存储。
+
+2\. 将查询SQL与Python代码解耦，通过SQLAlchemy读取MySQL数据，完成多维度业务分析：
+
+&#x20;   - \*\*销售趋势分析\*\*：识别订单季节性波动，判断旺季节点，输出备货与营销投放建议；
+
+&#x20;   - \*\*用户分层分析\*\*：RFM模型实现用户分群，定位高价值流失用户，给出召回策略；
+
+&#x20;   - \*\*同期群留存分析\*\*：Cohort队列模型计算新客留存，定位新客复购不足问题；
+
+&#x20;   - \*\*商品分析\*\*：帕累托分析验证爆款驱动特征，区分核心商品与长尾低效SKU；
+
+&#x20;   - \*\*退货专题分析\*\*：改用退货损失金额衡量真实业务损失，定位高损失风险单品；
+
+&#x20;   - \*\*跨国市场分析\*\*：分国家对比客单价，挖掘海外市场拓展机会。
+
+3\. Matplotlib、Seaborn生成分析图表，自动输出至charts目录；
+
+4\. 工程化实践：使用dotenv管理数据库密钥，不硬编码账号密码；pathlib动态管理路径，脚本可重复运行。
+
+
+
+\## 🛠 技术栈
+
+\- Python 3.11
+
+\- MySQL
+
+\- SQLAlchemy：数据库连接引擎
+
+\- PyMySQL：MySQL驱动
+
+\- Pandas、NumPy：数据清洗、指标计算
+
+\- Matplotlib、Seaborn：数据可视化绘图
+
+\- python-dotenv：环境变量管理，隔离敏感配置
+
